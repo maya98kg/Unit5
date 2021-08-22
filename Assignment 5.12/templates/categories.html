@@ -17,16 +17,16 @@
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>City</th>
-                        <th>Country</th>
+                        <th>Description</th>
+                        <th>Count</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for supplier in suppliers %}
+                    {% for category in categories %}
                     <tr>
-                        <td><a href="{{url_for('products',supplier_id=supplier['Id'])}}">{{supplier['CompanyName']}}</a></td>
-                        <td>{{supplier['City']}}</td>
-                        <td>{{supplier['Country']}}</td>
+                        <td>{{category['CategoryName']}}</td>
+                        <td>{{category['Description']}}</td>
+                        <td>{{category['Count']}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
