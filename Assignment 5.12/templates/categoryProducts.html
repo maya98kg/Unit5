@@ -11,6 +11,7 @@
     <section class="section">
         <div class="container">
             <h1 class="title">
+                {{categories[0]['CategoryName']}}
             </h1>
 
             <table class="table">
@@ -18,15 +19,13 @@
                     <tr>
                         <th>Name</th>
                         <th>Description</th>
-                        <th>Count</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for category in categories %}
                     <tr>
-                        <td><a href="{{url_for('category_products',id=category['Idd'])}}">{{category['CategoryName']}}</a></td>
-                        <td>{{category['Description']}}</td>
-                        <td>{{category['Count']}}</td>
+                        <td><a href="{{url_for('products',supplier_id=category['Idd'])}}">{{category['CompanyName']}}</a></td>
+                        <td>{{category['ProductName']}}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
